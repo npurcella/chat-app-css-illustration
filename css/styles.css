@@ -166,21 +166,46 @@ img {
 }
 
 /* END RESET CSS */
-body {
+.main {
   color: #a39daa;
   background: white;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
 
+.main::before,
+.main::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.main::before {
+  top: -20%;
+  right: 50%;
+  width: 530px;
+  height: 750px;
+  background: linear-gradient(45deg, #8838ff 20%, #e942ff 100%);
+  border-radius: 0px 0px 254px 254px;
+}
+
+.main::after {
+  bottom: -20%;
+  left: 50%;
+  width: 530px;
+  height: 750px;
+  background: rgba(212, 187, 234, 0.2);
+  border-radius: 254px 254px 0px 0px;
+}
+
 .phone-container {
   margin: 48px auto 64px;
   width: 75%;
-  max-width: 336px;
-  height: 712px;
+  max-width: 250px;
+  height: 500px;
   background: #f5f3f7;
   border: 10px solid white;
-  border-radius: 40px;
+  border-radius: 30px;
   box-shadow: 0px 20px 30px 25px rgba(110, 93, 126, 0.2);
   position: relative;
 }
@@ -189,11 +214,11 @@ body {
   position: absolute;
   background: white;
   margin: 0 auto;
-  height: 32px;
-  width: 200px;
-  top: -10px;
-  left: calc(50% - 100px);
-  border-radius: 15px;
+  height: 25px;
+  width: 130px;
+  top: -4px;
+  left: calc(50% - 65px);
+  border-radius: 0px 0px 15px 15px;
   z-index: 1;
 }
 
@@ -202,9 +227,9 @@ body {
   align-items: center;
   position: relative;
   background-image: linear-gradient(to left, #e942ff, #8838ff);
-  border-radius: 30px 30px 8px 8px;
-  padding: 32px 0 12px 32px;
-  margin-bottom: 8px;
+  border-radius: 22px 22px 8px 8px;
+  padding: 28px 0 12px 26px;
+  margin: 5px 5px 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -215,8 +240,8 @@ body {
   background-size: contain;
   height: 12px;
   width: 12px;
-  top: 42.4px;
-  left: 19.2px;
+  top: 34px;
+  left: 13px;
   display: inline-block;
 }
 
@@ -224,8 +249,8 @@ body {
   background-image: url(../images/avatar.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 32px;
-  width: 32px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   border: 1px solid white;
   display: inline-block;
@@ -238,11 +263,12 @@ body {
 
 .phone-container .app-header .header-name {
   color: white;
+  font-size: 11px;
 }
 
 .phone-container .app-header .header-status {
   color: #d89eff;
-  font-size: 0.75rem;
+  font-size: 8.5px;
   font-weight: 400;
 }
 
@@ -250,43 +276,46 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 0 2%;
 }
 
 .phone-container .bubble {
   border: 1px solid #ddd;
-  padding: 15px 10px;
-  margin: 5px;
-  font-size: 0.7rem;
-  border-radius: 10px;
+  margin: 5px 5px 3px;
+  font-size: 7.5px;
   line-height: 1.4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .phone-container .bubble--purple {
   color: #9241c8;
-  background: #d4bbea;
+  background: #e7dbf3;
   align-self: flex-start;
-  width: 180px;
+  width: 134px;
+  border-radius: 12px 12px 12px 5px;
+  padding: 6px 0px 6px 7px;
 }
 
 .phone-container .bubble--white {
   color: #6e5d7e;
   background: white;
   align-self: flex-end;
+  border-radius: 12px 12px 5px 12px;
+  padding: 6px 7px 6px 7px;
 }
 
 .phone-container .bubble-pic-container {
   align-self: flex-end;
-  margin-bottom: -6px;
+  margin-bottom: -8px;
 }
 
 .phone-container .bubble-pic {
   background-repeat: no-repeat;
   background-size: contain;
-  height: 55px;
-  width: 55px;
-  border-radius: 12px;
-  margin: 8px 6px;
+  height: 39px;
+  width: 39px;
+  border-radius: 8px;
+  margin: 10px 4px 5px 0px;
   display: inline-block;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -311,6 +340,10 @@ body {
   width: 125px;
 }
 
+.phone-container .rates-container {
+  margin-bottom: 4px;
+}
+
 .phone-container .bubble--rate {
   display: flex;
   justify-content: space-between;
@@ -318,11 +351,28 @@ body {
   color: white;
   font-weight: 400;
   background-image: linear-gradient(to right, #e942ff, #8838ff);
-  padding: 8px 20px 8px 35px;
+  padding: 8px 20px 8px 12px;
   margin-bottom: 3px;
   width: 70%;
-  border-top-left-radius: 18px;
+  border-radius: 12px 12px 12px 5px;
   position: relative;
+}
+
+.phone-container .bubble--rate .task-description-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone-container .bubble--rate .radio {
+  border: 1px solid #e570ff;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+}
+
+.phone-container .bubble--rate .task {
+  margin-left: 10px;
 }
 
 .phone-container .bubble--rate .rate {
@@ -330,31 +380,15 @@ body {
   font-size: 1rem;
 }
 
-.phone-container .bubble--rate.dot .rate::after {
-  content: "";
-  position: absolute;
-  height: 7px;
-  width: 7px;
-  top: 18px;
-  right: 16px;
-  border-radius: 50%;
-  background: #f00;
-}
-
-.phone-container .bubble--rate:last-of-type {
-  margin-bottom: 20px;
-}
-
 .phone-container .sms-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 96%;
   padding: 5px 7px 5px 25px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   border-radius: 25px;
   background: white;
-  border: 1px solid hotpink;
   font-size: 0.75rem;
   font-weight: 400;
 }
@@ -386,7 +420,7 @@ body {
   color: #3e2753;
   font-size: 3rem;
   font-weight: 500;
-  margin-bottom: 1.5em;
+  margin-bottom: 25px;
 }
 
 .text-container .info-paragraph {
@@ -403,5 +437,27 @@ body {
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media (min-width: 1000px) {
+  .main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .main::before {
+    right: 70%;
+  }
+  .main::after {
+    left: 70%;
+  }
+  .phone-container {
+    margin: 0 100px 0 auto;
+  }
+  .text-container {
+    text-align: left;
+    margin: 0 auto 0 0;
+    width: 45ch;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

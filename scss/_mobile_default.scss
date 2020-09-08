@@ -1,30 +1,54 @@
-body {
+.main {
     color: $bodyTextColor;
     background: $white;
     font-family: $fontFamily;
     font-weight: $fontRegular;
 }
-
+.main::before,
+.main::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+}
+.main::before {
+    top: -20%;
+    right: 50%;
+    width: 530px;
+    height: 750px;
+    background: linear-gradient(
+        45deg,
+        hsl(264, 100%, 61%) 20%,
+        hsl(293, 100%, 63%) 100%
+    );
+    border-radius: 0px 0px 254px 254px;
+}
+.main::after {
+    bottom: -20%;
+    left: 50%;
+    width: 530px;
+    height: 750px;
+    background: $lightPurpleBackground;
+    border-radius: 254px 254px 0px 0px;
+}
 .phone-container {
     margin: 48px auto 64px;
     width: 75%;
-    max-width: 336px;
-    height: 712px;
+    max-width: 250px;
+    height: 500px;
     background: $appBackgroundColor;
     border: 10px solid $white;
-    border-radius: 40px;
-    //     box-shadow: 0px 20px 30px 7px rgba($rightChatColor, 0.2);
+    border-radius: 30px;
     box-shadow: 0px 20px 30px 25px rgba($rightChatColor, 0.2);
     position: relative;
     .phone-speaker {
         position: absolute;
         background: $white;
         margin: 0 auto;
-        height: 32px;
-        width: 200px;
-        top: -10px;
-        left: calc(50% - 100px);
-        border-radius: 15px;
+        height: 25px;
+        width: 130px;
+        top: -4px;
+        left: calc(50% - 65px);
+        border-radius: 0px 0px 15px 15px;
         z-index: 1;
     }
     .app-header {
@@ -36,9 +60,9 @@ body {
             $pinkGradient,
             $purpleGradient
         );
-        border-radius: 30px 30px 8px 8px;
-        padding: 32px 0 12px 32px;
-        margin-bottom: 8px;
+        border-radius: 22px 22px 8px 8px;
+        padding: 28px 0 12px 26px;
+        margin: 5px 5px 4px;
         box-shadow: $shadow;
         .arrow {
             position: absolute;
@@ -47,16 +71,16 @@ body {
             background-size: contain;
             height: 12px;
             width: 12px;
-            top: 42.4px;
-            left: 19.2px;
+            top: 34px;
+            left: 13px;
             display: inline-block;
         }
         .header-image {
             background-image: url(../images/avatar.jpg);
             background-repeat: no-repeat;
             background-size: cover;
-            height: 32px;
-            width: 32px;
+            height: 25px;
+            width: 25px;
             border-radius: 50%;
             border: 1px solid $white;
             display: inline-block;
@@ -67,10 +91,11 @@ body {
         }
         .header-name {
             color: $white;
+            font-size: 11px;
         }
         .header-status {
             color: $subheadingColor;
-            font-size: 0.75rem;
+            font-size: 8.5px;
             font-weight: $fontLight;
         }
     }
@@ -78,13 +103,12 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin: 0 2%;
     }
     .bubble {
         border: 1px solid #ddd;
-        padding: 15px 10px;
-        margin: 5px;
-        font-size: 0.7rem;
-        border-radius: 10px;
+        margin: 5px 5px 3px;
+        font-size: 7.5px;
         line-height: 1.4;
         box-shadow: $shadow;
     }
@@ -92,24 +116,28 @@ body {
         color: $leftChatColor;
         background: $leftChatBgColor;
         align-self: flex-start;
-        width: 180px;
+        width: 134px;
+        border-radius: 12px 12px 12px 5px;
+        padding: 6px 0px 6px 7px;
     }
     .bubble--white {
         color: $rightChatColor;
         background: $white;
         align-self: flex-end;
+        border-radius: 12px 12px 5px 12px;
+        padding: 6px 7px 6px 7px;
     }
     .bubble-pic-container {
         align-self: flex-end;
-        margin-bottom: -6px;
+        margin-bottom: -8px;
     }
     .bubble-pic {
         background-repeat: no-repeat;
         background-size: contain;
-        height: 55px;
-        width: 55px;
-        border-radius: 12px;
-        margin: 8px 6px;
+        height: 39px;
+        width: 39px;
+        border-radius: 8px;
+        margin: 10px 4px 5px 0px;
         display: inline-block;
         box-shadow: $shadow;
     }
@@ -128,6 +156,9 @@ body {
     .bubble--white:last-of-type {
         width: 125px;
     }
+    .rates-container {
+        margin-bottom: 4px;
+    }
     .bubble--rate {
         display: flex;
         justify-content: space-between;
@@ -139,41 +170,39 @@ body {
             $pinkGradient,
             $purpleGradient
         );
-        padding: 8px 20px 8px 35px;
+        padding: 8px 20px 8px 12px;
         margin-bottom: 3px;
         width: 70%;
-        border-top-left-radius: 18px;
+        border-radius: 12px 12px 12px 5px;
+        .task-description-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .radio {
+            border: 1px solid $radioButtonOutlineColor;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+        }
+        .task {
+            margin-left: 10px;
+        }
         .rate {
             font-weight: $fontBold;
             font-size: 1rem;
         }
         position: relative;
     }
-    .bubble--rate.dot {
-        .rate::after {
-            content: "";
-            position: absolute;
-            height: 7px;
-            width: 7px;
-            top: 18px;
-            right: 16px;
-            border-radius: 50%;
-            background: #f00;
-        }
-    }
-    .bubble--rate:last-of-type {
-        margin-bottom: 20px;
-    }
     .sms-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 90%;
+        width: 96%;
         padding: 5px 7px 5px 25px;
-        margin: 0 auto 20px;
+        margin: 0 auto;
         border-radius: 25px;
         background: $white;
-        border: 1px solid hotpink;
         font-size: 0.75rem;
         font-weight: $fontLight;
         p {
@@ -192,7 +221,6 @@ body {
         }
     }
 }
-
 .text-container {
     width: 85%;
     max-width: 60ch;
@@ -202,7 +230,7 @@ body {
         color: $mainHeadingColor;
         font-size: 3rem;
         font-weight: $fontRegular;
-        margin-bottom: 1.5em;
+        margin-bottom: 25px;
     }
     .info-paragraph {
         font-weight: $fontLight;
@@ -210,8 +238,6 @@ body {
     }
 }
 .attribution {
-    // position: fixed;
-    // bottom: 0;
     font-size: 11px;
     text-align: center;
     margin: 1em auto;

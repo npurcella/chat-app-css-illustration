@@ -21,7 +21,7 @@
 
         <title>Frontend Mentor | [Challenge Name Here]</title>
     </head>
-    <body>
+    <body class="main">
         <div class="phone-container">
             <div class="phone-speaker"></div>
             <div class="app-header">
@@ -35,10 +35,10 @@
             </div>
             <div class="text-bubble-container">
                 <div class="bubble bubble--purple">
-                    That sounds great. I’d be happy with that.
+                    That sounds great. I’d be<br />happy with that.
                 </div>
                 <div class="bubble bubble--purple">
-                    Could you send over some pictures of your dog, please?
+                    Could you send over some<br />pictures of your dog, please?
                 </div>
                 <div class="bubble-pic-container">
                     <div class="bubble-pic bubble-pic-1"></div>
@@ -51,21 +51,29 @@
                 </div>
                 <div class="bubble bubble--white">Can you make it?</div>
                 <div class="bubble bubble--purple">
-                    She looks so happy! The time we discussed works. How long
+                    She looks so happy! The time<br />we discussed works. How<br />long
                     shall I take her out for?
                 </div>
-                <div class="bubble bubble--rate dot">
-                    <span class="task">30 minute walk</span
-                    ><span class="rate">$29</span>
+                <div class="rates-container">
+                    <div class="bubble bubble--rate dot">
+                        <div class="task-description-container">
+                            <span class="radio"></span>
+                            <span class="task">30 minute walk</span>
+                        </div>
+                        <span class="rate">$29</span>
+                    </div>
+                    <div class="bubble bubble--rate">
+                        <div class="task-description-container">
+                            <span class="radio"></span>
+                            <span class="task">1 hour walk</span>
+                        </div>
+                        <span class="rate">$49</span>
+                    </div>
                 </div>
-                <div class="bubble bubble--rate">
-                    <span class="task">1 hour walk</span
-                    ><span class="rate">$49</span>
+                <div class="sms-container">
+                    <p>Type a message…</p>
+                    <div class="send-button"></div>
                 </div>
-            </div>
-            <div class="sms-container">
-                <p>Type a message…</p>
-                <div class="send-button"></div>
             </div>
         </div>
         <div class="text-container">
@@ -76,14 +84,14 @@
                 Once the walk has been completed you can rate your walker and
                 book again all through the chat.
             </p>
-        </div>
-        <div class="attribution">
-            Challenge by
-            <a
-                href="https://www.frontendmentor.io?ref=challenge"
-                target="_blank"
-                >Frontend Mentor</a
-            >. Coded by <a href="#">Nancy Purcell</a>.
+            <div class="attribution">
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by <a href="#">Nancy Purcell</a>.
+            </div>
         </div>
     </body>
 </html>

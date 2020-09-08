@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    &::before {
+        right: 70%;
+    }
+    &::after {
+        left: 70%;
+    }
+}
+.phone-container {
+    margin: 0 100px 0 auto;
+}
+.text-container {
+    text-align: left;
+    margin: 0 auto 0 0;
+    width: 45ch;
+}
