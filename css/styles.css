@@ -202,12 +202,13 @@ img {
   margin: 48px auto 64px;
   width: 75%;
   max-width: 250px;
-  height: 500px;
+  height: 483px;
   background: #f5f3f7;
   border: 10px solid white;
   border-radius: 30px;
   box-shadow: 0px 20px 30px 25px rgba(110, 93, 126, 0.2);
   position: relative;
+  overflow: hidden;
 }
 
 .phone-container .phone-speaker {
@@ -229,7 +230,6 @@ img {
   background-image: linear-gradient(to left, #e942ff, #8838ff);
   border-radius: 22px 22px 8px 8px;
   padding: 28px 0 12px 26px;
-  margin: 5px 5px 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -280,11 +280,27 @@ img {
 }
 
 .phone-container .bubble {
-  border: 1px solid #ddd;
   margin: 5px 5px 3px;
   font-size: 7.5px;
   line-height: 1.4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-container .bubble.hide {
+  display: none;
+}
+
+.phone-container .bubble.slide-up {
+  animation: slideUp ease-out 1s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .phone-container .bubble--purple {
@@ -307,6 +323,8 @@ img {
 .phone-container .bubble-pic-container {
   align-self: flex-end;
   margin-bottom: -8px;
+  box-shadow: none;
+  border: none;
 }
 
 .phone-container .bubble-pic {
@@ -381,6 +399,8 @@ img {
 }
 
 .phone-container .sms-container {
+  position: absolute;
+  bottom: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -446,10 +466,14 @@ img {
     height: 100vh;
   }
   .main::before {
+    top: 0;
     right: 70%;
+    height: 780px;
   }
   .main::after {
+    bottom: 0;
     left: 70%;
+    height: 780px;
   }
   .phone-container {
     margin: 0 100px 0 auto;
